@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>
+            Logowanie
+        </title>
+        <script type = "text/javascript">
+
+            function validate() {
+                var username = document.myform.username.value;
+                var password = document.myform.password.value;
+                var valid = false;
+
+                var usernames = ["user"];
+                var passwords = ["password"];
+
+                for (var i = 0; i < usernames.length; i++) {
+                    if ((username == usernames[i]) && (password == passwords[i])) {
+                        valid = true;
+                        break;
+                    }
+                }
+
+                if (valid) {
+                    window.location = "success.html";
+                    return false;
+                } else {
+                    window.location = "fail.html";
+                    return false;
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+
+        <form name = "myform">
+            <p>
+                <label>
+                    Login:
+                </label>
+                <input type="text" name="username">
+            </p>
+            <p>
+                <label>
+                    Haslo:
+                </label> 
+                <input type="password" name="password">
+            </p>
+            <p>
+                <input type="button" value="Zaloguj" name="Zaloguj" onclick= "validate()">
+            </p>
+
+        </form>
+    </body>
+</html>
